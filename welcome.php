@@ -42,9 +42,10 @@ include "include/firstTab.php";
 
 //Calculator tab
 include "include/secondTab.php";
-$_SESSION['tab_block'] = 'none';
-$_SESSION['tab_default'] = 'block';
 
+// . . .. . Add more tabs here
+
+//..
 ?>
 
 

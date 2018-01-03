@@ -1,7 +1,7 @@
 <!---->
 <!--SECOND TAB-->
 <!---->
-<div id="Calculator" class="tabcontent" style="display: <?= $_SESSION['tab_block'] ?>">
+<div id="Calculator" class="tabcontent" style="display: <?php echo ($_SESSION['set_tab'] == 'two')? 'block':'none';?>">
     <form action="" method="post">
         <input type="text" name="first" placeholder="First Number"
                value="<?php echo (isset($_POST['first'])) ? $_POST['first'] : ''; ?>"><br>

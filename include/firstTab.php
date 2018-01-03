@@ -2,7 +2,7 @@
 <!--FIRST TAB (ADMIN TAB)-->
 <!---->
 
-<div id="Admin" class="tabcontent" style="display: <?=$_SESSION['tab_default'];?>">
+<div id="Admin" class="tabcontent" style="display: <?php echo ($_SESSION['set_tab'] == 'one')? 'block':'none';?>">
     <?php
 
     /**

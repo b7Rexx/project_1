@@ -1,13 +1,14 @@
 <?php
 /**
  * Calculator using form from second tab
- * sets session for tab_block and tab_default
+ * sets tab session
  * changes inline display style of tab block
  */
 $output = '';
 $num1 = '';
 $num2 = '';
 $operator = '';
+$_SESSION['set_tab'] = 'one';
 
 if (!empty($_POST)) {
     $num1 = $_POST['first'];
@@ -34,12 +35,9 @@ if (!empty($_POST)) {
         $output = '0';
     }
 
-    $_SESSION['tab_block'] = 'block';
-    $_SESSION['tab_default'] = 'none';
-
-}else{
-    $_SESSION['tab_block'] = 'none';
-    $_SESSION['tab_default'] = 'block';
+    $_SESSION['set_tab'] = 'two';
+} else {
+    $_SESSION['set_tab'] = 'one';
 
 }
 ?>
