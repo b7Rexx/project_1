@@ -34,7 +34,6 @@ if (!(isset($_SESSION['username']) || isset($_COOKIE['user']))) {
     <title>Welcome</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<div class="behind">
 <body>
 <div class="welcome">
     <h3>Welcome! <?= (isset($_SESSION['username'])) ? $_SESSION['username'] : $_COOKIE['user']; ?></h3>
@@ -66,5 +65,4 @@ include "include/thirdTab.php";
 
 <script src="js/tab.js"></script>
 </body>
-</div>
 </html>
