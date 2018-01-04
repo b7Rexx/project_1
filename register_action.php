@@ -14,7 +14,7 @@ $register_confirm = $_POST['confirm_register'];
 
 if ($register_pass === $register_confirm) {
 
-    $handle = fopen('user_pass.txt', 'a');
+    $handle = fopen('files/user_pass.txt', 'a');
     fwrite($handle, "$register_name=username&password=$register_pass\n");
     fclose($handle);
     header('Location: login.php?successfulRegister');

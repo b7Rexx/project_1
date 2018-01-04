@@ -5,11 +5,11 @@ if(!empty($_GET)) {
     $delete = $_GET['id'];
     echo $delete;
     echo '<br>';
-    $file = file("user_pass.txt");
+    $file = file("files/user_pass.txt");
     $file[$delete] = '';
 //print_r($file);
 
-    $handle = fopen('user_pass.txt', 'w');
+    $handle = fopen('files/user_pass.txt', 'w');
     fwrite($handle, implode($file));
 
 //$file1 = file("user_pass.txt");

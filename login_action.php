@@ -11,8 +11,8 @@ if (!empty($_POST)) {
     $login_pass = $_POST['pass_login'];
     $login_check = $login_name . "=username&password=" . $login_pass . "\n";
 
-    $handle = fopen('user_pass.txt', 'r');
-    $user_pass = file('user_pass.txt');
+    $handle = fopen('files/user_pass.txt', 'r');
+    $user_pass = file('files/user_pass.txt');
 
     if ($handle) {
         $i = 0;

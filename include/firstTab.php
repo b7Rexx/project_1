@@ -9,12 +9,12 @@
      * put admin by default when all account removed
      */
 
-    if (empty(file('user_pass.txt'))) {
-        $handle = fopen('user_pass.txt', 'a');
+    if (empty(file('files/user_pass.txt'))) {
+        $handle = fopen('files/user_pass.txt', 'a');
         fwrite($handle, "admin=username&password=admin\n");
         fclose($handle);
     }
-    $read_file = file('user_pass.txt');
+    $read_file = file('files/user_pass.txt');
     $imp = implode('=username&password=', $read_file);
     $all_admin = explode('=username&password=', $imp);
     //print_r($all_admin);
