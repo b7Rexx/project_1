@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (isset($_SESSION['username'])|| isset($_COOKIE['user'])) {
+if (isset($_SESSION['username']) || isset($_COOKIE['user'])) {
     header('Location: welcome.php?alreadyLoggedIn');
     die;
 }
@@ -22,10 +22,11 @@ if (isset($_SESSION['username'])|| isset($_COOKIE['user'])) {
 <body>
 <div class="anchor"><a href="login.php" type="button">Login</a></div>
 <div class="login">
-    <form class="loginform" action="register_action.php" method="post">
+    <form class="loginform" action="register_action.php" method="post" enctype="multipart/form-data">
         <input name="name_register" type="text" placeholder="Username"><br>
         <input name="pass_register" type="password" placeholder="password"><br>
         <input name="confirm_register" type="password" placeholder="Confirm password"><br>
+        <input id="ok" type="file" name="logo_register" style="width: 0.1px;margin-top: 15px"><label for="ok">Upload a logo</label><br>
         <button type="submit">Register</button>
     </form>
     <?php

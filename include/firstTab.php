@@ -21,7 +21,7 @@
 
     ?>
     <div class="table">
-        <h2 style="margin-top: 50px;">List of Admin</h2>
+        <h2>List of Admin</h2>
         <table class="admin_list">
             <tr>
                 <th>Username</th>
@@ -35,7 +35,7 @@
                 for ($i = 0, $j = 0; $i < count($all_admin);) {
                     echo "<tr>";
                     echo "<td >{$all_admin[$i]}</td ><td>{$all_admin[$i+1]}</td >";
-                    echo "<td><a href=\"delete.php?id=" . $j . "\">&times</a></td>";
+                    echo "<td><a href=\"delete.php?id=" . $j . "\" onclick=\"return confirm('Remove this Admin?')\">&times</a></td>";
                     echo "</tr >";
                     $i += 2;
                     $j++;

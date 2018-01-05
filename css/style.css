@@ -2,13 +2,20 @@
 CSS Document
  */
 * {
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
-    }
+    color: darkslateblue;
+}
 
 body {
+    margin: 0 auto;
     width: 1024px;
-    background: url("../../bg.jpg");
+    background: url("../../bg.jpg") repeat-y center top;
+}
+
+h2 {
+    margin: 30px 0 10px 0;
+    color: indigo;
 }
 
 .login {
@@ -27,6 +34,19 @@ body {
 
 }
 
+.loginform label {
+    color: whitesmoke;
+    background: darkgrey;
+    padding: 2px;
+    border: 3px outset darkgrey;
+    border-radius: 7px
+}
+
+.loginform label:hover {
+    background: #cd0a0a;
+    color: black;
+}
+
 .login input {
     height: 30px;
     font-size: 16px;
@@ -34,14 +54,20 @@ body {
     text-align: center;
     background: transparent;
     border: 0;
-    border-bottom: 2px inset;
+    border-bottom: 2px inset darkgrey;
 }
 
 .login button {
     padding: 5px;
     width: 60px;
     margin: 10px;
-    border: 0;
+    border: 2px outset white;
+    background: white;
+}
+
+.login button:hover {
+    background: #cd0a0a;
+    color: black;
 }
 
 .login i {
@@ -62,15 +88,31 @@ body {
 
 }
 
-.welcome h3 {
-    text-align: center;
-    margin: 30px;
-    font-size: 50px;
+.welcome a {
+    position: absolute;
+    top: 40px;
+    margin-left: 50px;
+    font-size: 40px;
     font-style: italic;
 }
 
+.welcome img {
+    height: 90px;
+    width: auto;
+    margin: 15px 10px 10px 0;
+    display: inline-block;
+    border: 3px;
+    border-radius: 10px;
+    /*opacity: 0.7;*/
+}
+
+.welcome a {
+    text-decoration: none;
+    color: black;
+}
+
 .table {
-    margin: auto 40%;
+    /*margin: auto 40%;*/
 }
 
 .admin_list th, td {
@@ -119,7 +161,6 @@ a {
 .tab button {
     background-color: inherit;
     color: greenyellow;
-    font-style: italic;
     float: left;
     border: none;
     outline: none;
@@ -151,8 +192,8 @@ a {
 }
 
 #Calculator {
-    margin-top: 30px;
-    margin-left: 25%;
+    /*margin-top: 30px;*/
+    /*margin-left: 25%;*/
 }
 
 #Calculator input, select, option {
@@ -163,6 +204,9 @@ a {
 
 .upload {
     float: right;
+    display: block;
+    margin: -70px 0 0 0;
+    z-index: 1;
 }
 
 .upload input {
@@ -179,19 +223,19 @@ a {
 }
 
 .image_block {
-    float: left;
-    width: 750px;
+    float: top;
+    width: 1020px;
     background: transparent;
 }
 
 .image_list {
     float: left;
-    display: inline;
-    margin: 50px 20px 0 5px;
+    margin: 10px 15px 0 0;
+    border: 1px solid skyblue;
 }
 
 .image_list img {
-    width: 350px;
+    width: 320px;
     height: auto;
 }
 
@@ -207,4 +251,26 @@ a {
     float: right;
     font-weight: bold;
     color: red;
+}
+
+.pendrive {
+    font-size: 18px;
+}
+
+.pendrive input {
+    text-align: right;
+    font-size: 18px;
+    padding: 5px;
+    margin-left: 30px;
+}
+
+.pendrive select {
+    height: 35px;
+}
+
+.pendrive button {
+    padding: 5px 15px 5px 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: darkslateblue;
 }

@@ -5,13 +5,12 @@
 
 <div id="image_list" class="tabcontent"
      style="display: <?php echo ($_SESSION['set_tab'] == 'three') ? 'block' : 'none'; ?>">
-    <div class="upload">
-        <form method="post" action="" enctype="multipart/form-data">
+    <h2>Photos</h2>
+    <form class="upload" method="post" action="" enctype="multipart/form-data">
             <input type="file" name="image_file" required/><br>
             <input type="text" name="image_name" placeholder="caption" required/><br>
             <button type="submit">Upload</button>
         </form>
-    </div>
     <div class="image_block">
         <?php
         //This is the directory where images will be saved
@@ -52,7 +51,9 @@
             $file[$del_id] = '';
             $handle1 = fopen('files/image.txt', 'w');
             fwrite($handle1, implode($file));
-        }
+			header ('Location: welcome.php?tabThree_delete=ok');
+			die;
+		}
 
         $j = 0;
         $file = file('files/image.txt');

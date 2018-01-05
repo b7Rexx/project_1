@@ -10,10 +10,11 @@ if (isset($_POST['first']) && isset($_POST['second']) && isset($_POST['operator'
     $_SESSION['set_tab'] = 'two';
 } elseif (isset($_POST['image_name']) && isset($_FILES['image_file'])) {
     $_SESSION['set_tab'] = 'three';
-}elseif (isset($_GET['thirdTab_id'])){
+} elseif (isset($_GET['thirdTab_id']) || !empty($_GET['tabThree_delete'])) {
     $_SESSION['set_tab'] = 'three';
-}
-else {
+} elseif (isset($_POST['price_calc'])) {
+    $_SESSION['set_tab'] = 'four';
+} else {
     $_SESSION['set_tab'] = 'one';
 
 }
@@ -22,6 +23,8 @@ if (!(isset($_SESSION['username']) || isset($_COOKIE['user']))) {
     header('Location: login.php?loginFirst');
     die;
 }
+
+$image = isset($_SESSION['username']) ? $_SESSION['username'] . ".png" : $_COOKIE['user'] . ".png";
 ?>
 
 <!doctype html>
@@ -36,16 +39,21 @@ if (!(isset($_SESSION['username']) || isset($_COOKIE['user']))) {
 </head>
 <body>
 <div class="welcome">
-    <h3>Welcome! <?= (isset($_SESSION['username'])) ? $_SESSION['username'] : $_COOKIE['user']; ?></h3>
+    <h3>
+        <img src="img/logo/<?= file_exists("img/logo/".$image)? "$image":'default.png';?>">
+        <a href="welcome.php">Welcome! <?= (isset($_SESSION['username'])) ? $_SESSION['username'] : $_COOKIE['user']; ?></a>
+    </h3>
 </div>
-<form method="post" action="logout.php">
-    <button class="logout " type="submit" onclick="return confirm('Are you sure?')">Logout</button>
-</form>
 
 <div class="tab">
     <button class="tablinks" onclick="openTab(event, 'Admin')">Home</button>
     <button class="tablinks" onclick="openTab(event, 'Calculator')">Calculator</button>
     <button class="tablinks" onclick="openTab(event, 'image_list')">Photos</button>
+    <button class="tablinks" onclick="openTab(event, 'pendrive_price_calc')">Pendrive</button>
+    <form method="post" action="logout.php">
+        <button style="float: right;color:darkorange" type="submit" onclick="return confirm('Logout?')">Logout</button>
+    </form>
+
 </div>
 <?php
 //Admin list tab
@@ -56,6 +64,9 @@ include "include/secondTab.php";
 
 //Third Tab
 include "include/thirdTab.php";
+
+//Fourth Tab
+include "include/fourthTab.php";
 
 // . . .. . Add more tabs here
 
