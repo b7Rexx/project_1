@@ -12,6 +12,8 @@ if (isset($_POST['first']) && isset($_POST['second']) && isset($_POST['operator'
     $_SESSION['set_tab'] = 'three';
 } elseif (isset($_GET['thirdTab_id']) || !empty($_GET['tabThree_delete'])) {
     $_SESSION['set_tab'] = 'three';
+} elseif (isset($_GET['thirdTab_download']) || !empty($_GET['tabThree_download'])) {
+    $_SESSION['set_tab'] = 'three';
 } elseif (isset($_POST['price_calc'])) {
     $_SESSION['set_tab'] = 'four';
 } else {

@@ -38,9 +38,9 @@ if (isset($_POST['price_calc'])) {
     <div class="pendrive">
         <form action="" method="post">
             <br>
-            <p>Sandisk : <input name="sandisk" type="text" value="<?= $sandisk; ?>"> x Rs.700</p><br>
-            <p>Samsung : <input name="samsung" type="text" value="<?= $samsung; ?>"> x Rs.650</p><br>
-            <p>Toshiba : <input name="toshiba" type="text" value="<?= $toshiba; ?>"> x Rs.750</p><br>
+            <p>Sandisk : <input name="sandisk" type="number" value="<?= $sandisk; ?>"> x Rs.700</p><br>
+            <p>Samsung : <input name="samsung" type="number" value="<?= $samsung; ?>"> x Rs.650</p><br>
+            <p>Toshiba : <input name="toshiba" type="number" value="<?= $toshiba; ?>"> x Rs.750</p><br>
 
             <input type="checkbox" name="packing[]" value="box" <?php foreach ($packing as $data1) {
                 echo ($data1 == 'box') ? 'checked' : '';
