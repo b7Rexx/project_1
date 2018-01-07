@@ -88,9 +88,10 @@ h2 {
 
 }
 
-.welcome a {
+.welcome h3 > a {
     position: absolute;
     top: 40px;
+    color: blue;
     margin-left: 50px;
     font-size: 40px;
     font-style: italic;
@@ -101,9 +102,13 @@ h2 {
     width: auto;
     margin: 15px 10px 10px 0;
     display: inline-block;
-    border: 3px;
+    border: 5px outset;
     border-radius: 10px;
     /*opacity: 0.7;*/
+}
+
+.welcome img:hover {
+    border: 5px inset;
 }
 
 .welcome a {
@@ -203,8 +208,11 @@ a {
 }
 
 .upload {
-    float: right;
+    /*float: right;*/
     display: block;
+    bottom: 0;
+    right: 0;
+    position: fixed;
     border: 5px outset darkred;
     background: indianred;
     margin: -70px 0 0 0;
@@ -235,7 +243,7 @@ a {
 .image_list {
     float: left;
     margin: 10px 15px 0 0;
-    border: 1px solid skyblue;
+    border: 1px solid lightskyblue;
     position: relative;
     display: inline-block;
 }
@@ -243,6 +251,7 @@ a {
 .image_list img {
     width: 320px;
     height: auto;
+    margin: 0 0 -4px 0;
 }
 
 .image_list p {
@@ -293,4 +302,27 @@ a {
     font-size: 18px;
     font-weight: bold;
     color: darkslateblue;
+}
+
+.image_container{
+position: absolute;
+    left:0;
+}
+
+.image_container img{
+    height:100vh;
+    width: auto;
+}
+
+.image_container button{
+    position: absolute;
+    right:0;
+    padding: 4px 7px 4px 7px;
+    margin: 15px;
+    font-weight: bold;
+}
+
+.image_container button:hover{
+    background: black;
+    color: white;
 }

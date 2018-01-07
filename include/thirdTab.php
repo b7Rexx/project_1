@@ -57,8 +57,8 @@
             $file = file('files/image.txt');
             foreach ($file as $show_line) {
                 $image = explode('&', $show_line);
-                echo "<div class=\"image_list\">";
-                echo "<a href=\"?thirdTab_download={$j}\" style='left:0;'><img src=\"download.png\"></a>";
+                echo "<div class=\"image_list\" onclick=\"window.location.href='view.php?id={$j}'\">";
+                echo "<a href=\"download.php?thirdTab_download={$j}\" style='left:0;'><img src=\"download.png\"></a>";
                 echo "<p>{$image[1]}</p><a href=\"?thirdTab_id={$j}\" style='right:0;'>&times</a>";
                 echo "<img src=\"img/{$image[0]}\">";
                 echo "</div>";
@@ -68,7 +68,7 @@
 
             //Download IMAGE
             //
-            //            if (isset($_GET['thirdTab_download'])) {
+			//					if (isset($_GET['thirdTab_download'])) {
             //                $file = file('files/image.txt');
             //                $download_id = $_GET['thirdTab_download'];
             //                $download = explode('&',$download_id);
@@ -77,7 +77,7 @@
             //                header("Cache-Control: no-store, no-cache");
             //                header("Content-Disposition: attachment; filename=\"{$download[0]}\"");
             //                echo "img/{$download[0]}";
-            //            }
+              //          }
         }
         ?>
     </div>

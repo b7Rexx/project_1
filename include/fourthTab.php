@@ -1,5 +1,5 @@
 <!---->
-<!--THIRD TAB (PHOTOS)-->
+<!--FOURTH TAB (PRICE CALCULATE)-->
 <!---->
 <?php
 $samsung = '0';
