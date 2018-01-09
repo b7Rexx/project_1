@@ -5,14 +5,15 @@
 
 <div id="image_list" class="tabcontent"
      style="display: <?php echo ($_SESSION['set_tab'] == 'three') ? 'block' : 'none'; ?>">
-    <h2>Photos</h2>
     <form class="upload" method="post" action="" enctype="multipart/form-data">
-        <h4>Upload one or more files</h4>
+        <h4>Upload one/more files</h4>
+        <br>
         <input multiple type="file" name="image_file[]" required/><br>
         <input type="text" name="image_name" placeholder="Caption" required/><br>
         <button type="submit">Upload</button>
     </form>
     <div class="image_block">
+        <h2>Photos</h2>
 
         <?php
         if (!empty($_FILES)) {
@@ -55,29 +56,19 @@
 
             $j = 0;
             $file = file('files/image.txt');
+            echo "<form method='post' action='download.php'>";
             foreach ($file as $show_line) {
                 $image = explode('&', $show_line);
-                echo "<div class=\"image_list\" onclick=\"window.location.href='view.php?id={$j}'\">";
+                echo "<div class=\"image_list\">";
                 echo "<a href=\"download.php?thirdTab_download={$j}\" style='left:0;'><img src=\"download.png\"></a>";
-                echo "<p>{$image[1]}</p><a href=\"?thirdTab_id={$j}\" style='right:0;'>&times</a>";
-                echo "<img src=\"img/{$image[0]}\">";
+                echo "<label for='zip_id{$j}'><input type='checkbox' name='download_zip[]' value='{$j}' id='zip_id{$j}'><p>{$image[1]}</p></input></label>";
+                echo "<a href=\"?thirdTab_id={$j}\" style='right:0;'>&times</a>";
+                echo "<img onclick=\"window . location . href = 'view.php?id={$j}'\" src=\"img/{$image[0]}\">";
                 echo "</div>";
                 $j++;
             }
 
-
-            //Download IMAGE
-            //
-			//					if (isset($_GET['thirdTab_download'])) {
-            //                $file = file('files/image.txt');
-            //                $download_id = $_GET['thirdTab_download'];
-            //                $download = explode('&',$download_id);
-            //
-            //                header("Content-type: image/jpeg");
-            //                header("Cache-Control: no-store, no-cache");
-            //                header("Content-Disposition: attachment; filename=\"{$download[0]}\"");
-            //                echo "img/{$download[0]}";
-              //          }
+            echo "<button class='zip_download' type='submit'>Download <br><img src='download.png'><br> checked</button></form>";
         }
         ?>
     </div>

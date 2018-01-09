@@ -208,30 +208,30 @@ a {
 }
 
 .upload {
-    /*float: right;*/
-    display: block;
-    bottom: 0;
-    right: 0;
     position: fixed;
-    border: 5px outset darkred;
-    background: indianred;
-    margin: -70px 0 0 0;
-    z-index: 1;
+    right: 0;
+    top: 190px;
+    width: 150px;
+    border: 5px outset darkgrey;
+    background: lightgrey;
 }
 
 .upload input {
-    float: right;
-    height: 25px;
-    width: 200px;
-    padding: 2px;
+    height: 30px;
+    width: inherit;
 }
 
 .upload button {
     float: right;
-    height: 30px;
     padding: 5px;
     width: 70px;
     margin: 5px;
+    font-weight: bold;
+}
+
+.upload button:hover {
+    background: black;
+    color: white;
 }
 
 .image_block {
@@ -251,14 +251,17 @@ a {
 .image_list img {
     width: 320px;
     height: auto;
+    max-height: 400px;
     margin: 0 0 -4px 0;
 }
 
 .image_list p {
     text-align: center;
-    margin-bottom: 10px;
+    margin: -22px 40px 0 40px;
+    padding: 5px;
     font-size: 20px;
     color: darkred;
+    background: antiquewhite;
 }
 
 .image_list a {
@@ -280,6 +283,31 @@ a {
 .image_list a:hover {
     background: yellow;
     padding: 2px;
+}
+
+.image_list input {
+    margin-left: 50px;
+    margin-top: 5px;
+}
+
+.zip_download {
+    margin: 10px;
+    position: fixed;
+    right: 0;
+    top:400px;
+    padding: 5px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.zip_download img {
+    height: 18px;
+    width: auto;
+}
+
+.zip_download:hover {
+    background: black;
+    color: white;
 }
 
 .pendrive {
@@ -304,25 +332,27 @@ a {
     color: darkslateblue;
 }
 
-.image_container{
-position: absolute;
-    left:0;
-}
-
-.image_container img{
-    height:100vh;
-    width: auto;
-}
-
-.image_container button{
+.image_container {
+    float: top;
+    display: block;
     position: absolute;
-    right:0;
+}
+
+.image_container img {
+    width: auto;
+    margin: 10px;
+    border: 2px solid lightskyblue;
+}
+
+.image_container button {
+    position: absolute;
+    right: 0;
     padding: 4px 7px 4px 7px;
     margin: 15px;
     font-weight: bold;
 }
 
-.image_container button:hover{
+.image_container button:hover {
     background: black;
     color: white;
 }
